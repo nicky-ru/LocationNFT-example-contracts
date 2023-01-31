@@ -1,6 +1,6 @@
 module.exports = async ({ ethers, getNamedAccounts, deployments }) => {
     const { deploy, log } = deployments
-    const { deployer } = await getNamedAccounts()
+    const { deployer }: { [name: string]: string } = await getNamedAccounts()
 
     const verifier = await deployments.get("MetapebbleDataVerifier")
     const locationNFT = await deployments.get("LocationNFT")
@@ -14,7 +14,7 @@ module.exports = async ({ ethers, getNamedAccounts, deployments }) => {
             verifier.address,
             locationNFT.address,
             ethers.utils.parseEther("0.1"),
-            deployer.address,
+            deployer,
             ethers.utils.parseEther("0.1"),
         ],
         deterministicDeployment: false,
