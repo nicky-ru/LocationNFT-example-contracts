@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "./LocationNFT.sol";
-import "./interface/IMetapebbleDataVerifier.sol";
+import "./legacy/interface/IMetapebbleDataVerifier.sol";
 
 contract Logic is Ownable, ReentrancyGuard {
     event Claimed(address indexed holder, bytes32 indexed deviceHash);
